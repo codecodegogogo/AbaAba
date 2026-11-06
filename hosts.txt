@@ -1,0 +1,163 @@
+! Title: Anti-Fraud Block
+! Description: DNS-level anti-fraud block rules for AdGuard Home.
+! Source: rules/anti_fraud_hosts.txt
+! Format: AdGuard Home custom filtering rules, hosts syntax.
+!
+! These rules block the listed domain names through DNS. They do not block
+! direct connections to bare IP addresses.
+
+0.0.0.0 gjfzpt.cn
+0.0.0.0 fzapp-test-tyy.gjfzpt.cn
+0.0.0.0 oss.gjfzpt.cn
+0.0.0.0 fzapp.gjfzpt.cn
+0.0.0.0 fzapph5.gjfzpt.cn
+0.0.0.0 miit.gov.cn
+0.0.0.0 mps.gov.cn
+0.0.0.0 beian.miit.gov.cn
+0.0.0.0 ywtbapi.mps.gov.cn
+0.0.0.0 beian.mps.gov.cn
+0.0.0.0 mail.mps.gov.cn
+0.0.0.0 ywtb.mps.gov.cn
+0.0.0.0 ngo.mps.gov.cn
+0.0.0.0 m.mps.gov.cn
+0.0.0.0 dbjb.mps.gov.cn
+0.0.0.0 ispl.mps.gov.cn
+0.0.0.0 ecidewc.mps.gov.cn
+0.0.0.0 cyberpolice.mps.gov.cn
+0.0.0.0 app.mps.gov.cn
+0.0.0.0 zlbj.mps.gov.cn
+0.0.0.0 zwfw.mps.gov.cn
+0.0.0.0 ecidcwc.mps.gov.cn
+0.0.0.0 www.mps.gov.cn
+0.0.0.0 chanct.com
+0.0.0.0 fqzpt.com
+0.0.0.0 fzlm.com
+0.0.0.0 fanzha.org.cn
+0.0.0.0 hicore-auth.com
+0.0.0.0 hei-tong.com
+0.0.0.0 loongteam.com
+0.0.0.0 cert.org.cn
+0.0.0.0 ifcert.cn
+0.0.0.0 ifcert.com
+0.0.0.0 ifcert.org.cn
+0.0.0.0 cnvd.org.cn
+0.0.0.0 anva.org.cn
+0.0.0.0 ics-cert.org.cn
+0.0.0.0 certlab.org
+0.0.0.0 china-bestmind.com
+0.0.0.0 i-bestmind.com
+0.0.0.0 t-bestmind.com
+0.0.0.0 himindtech.com
+0.0.0.0 fhss.com.cn
+0.0.0.0 hailiangyun.cn
+
+! ==================================================================
+! NOIR 追踪域名（analytics / ads / crash reporting）
+! 来源：NOIR 手机扫描报告 · 2026-11-05 · 共 47 条
+! 说明：这些域名不承载用户功能，可在 DNS 层拦截。
+! DNS 拦截对已建立的连接无效，切换网络或重启后生效。
+! ==================================================================
+0.0.0.0 ad.zijieapi.com
+0.0.0.0 aes-1.cn-wulanchabu.log.aliyuncs.com
+0.0.0.0 api.ad.xiaomi.com
+0.0.0.0 apmplus.volces.com
+0.0.0.0 app-monitor.ele.me
+0.0.0.0 applog-perf.uc.cn
+0.0.0.0 applog.lc.quark.cn
+0.0.0.0 applog.snssdk.com
+0.0.0.0 applog.uc.cn
+0.0.0.0 aspect-upush.umeng.com
+0.0.0.0 athena-api.oceanengine.com
+0.0.0.0 aweme.snssdk.com
+0.0.0.0 bugtrace.3g.qq.com
+0.0.0.0 cgi.qplus.com
+0.0.0.0 cgp.snssdk.com
+0.0.0.0 collect.ux.21cn.com
+0.0.0.0 ecom.snssdk.com
+0.0.0.0 errnewlog.umeng.com
+0.0.0.0 errnewlogos.umeng.com
+0.0.0.0 gjapplog.ucweb.com
+0.0.0.0 h-adashx.ut.taobao.com
+0.0.0.0 i.isnssdk.com
+0.0.0.0 i.sgsnssdk.com
+0.0.0.0 jrlt.beacon.qq.com
+0.0.0.0 log.iflytek.com
+0.0.0.0 log.snssdk.com
+0.0.0.0 log.tpns.tencent.com
+0.0.0.0 logs.amap.com
+0.0.0.0 mon.byteoversea.com
+0.0.0.0 mon.isnssdk.com
+0.0.0.0 mon.tiktokv.com
+0.0.0.0 offmsg.umeng.com
+0.0.0.0 pingma.qq.com
+0.0.0.0 px.wpk.quark.cn
+0.0.0.0 rtapplog.snssdk.com
+0.0.0.0 rtlog.qvb.qcloud.com
+0.0.0.0 rtlog.snssdk.com
+0.0.0.0 rttgpsreport.map.qq.com
+0.0.0.0 stat.api.tpns.tencent.com
+0.0.0.0 stat.m.img4399.com
+0.0.0.0 tracker-preview.ai.xiaomi.com
+0.0.0.0 tracker-preview.xiaomixiaoai.com
+0.0.0.0 tracker.ai.xiaomi.com
+0.0.0.0 tracker.xiaomixiaoai.com
+0.0.0.0 tracking.miui.com
+0.0.0.0 up4.ucweb.com
+0.0.0.0 zxid-m.mobileservice.cn
+
+! ==================================================================
+! 手机复扫补充：SystemHelper / 小米安全栈（2026-11-06）
+! ==================================================================
+! 建议拦截：中国联通 DM（Device Management，设备管理）平台，明文 HTTP，移动卡无功能依赖
+0.0.0.0 dm.wo.com.cn
+! 建议拦截：腾讯灯塔统计上报
+0.0.0.0 otheve.beacon.qq.com
+! 建议拦截：小米游戏 SDK 日志上报
+0.0.0.0 sdk.s.migames.com
+
+! 以下为小米安全功能域名，已按你的要求启用；如安全功能异常，注释掉对应行：
+0.0.0.0 virus-engine.sec.miui.com
+0.0.0.0 api.sec.miui.com
+0.0.0.0 flash.sec.miui.com
+0.0.0.0 notify.sec.miui.com
+0.0.0.0 detection-aigc.engine.miui.com
+! 百度定位：拦了会影响依赖百度定位的应用；如定位异常，注释掉这一行
+0.0.0.0 loc.map.baidu.com
+! hosts 语法无法表达 *.sec.miui.com 通配；也不建议拦整个 sec.miui.com。
+
+! ==================================================================
+! 安全组件上传口补充（2026-11-06，4 条）
+! ==================================================================
+! 安全中心主上传口；拦后可能影响隐私协议/云配置同步
+0.0.0.0 data.sec.miui.com
+! 安全中心广告/游戏推荐
+0.0.0.0 adv.sec.miui.com
+! 小米广告监测
+0.0.0.0 monitor-check.ad.xiaomi.com
+! 第三方上传端点（LBE/AuthManager 代码中出现）
+0.0.0.0 gateway-papa.cloud.weizhi.com
+
+! ==================================================================
+! 反诈/安全中心云端点补充（2026-11-06）
+! 说明：以下域名按需拦截；拦后可能影响对应的安全功能。
+! ==================================================================
+! 反诈检测引擎配置；拦后可能影响反诈云配置
+0.0.0.0 fraud-detection.engine.miui.com
+! 安全中心端口检测/鉴权/机器人端点；拦后可能影响网络检测与权限授权
+0.0.0.0 port.sec.miui.com
+0.0.0.0 auth.be.sec.miui.com
+0.0.0.0 auth-engine.sec.miui.com
+0.0.0.0 pro-robot.sec.miui.com
+! 安天 AVL 病毒库更新；拦后病毒库无法更新
+0.0.0.0 logupdate.avlyun.sec.miui.com
+0.0.0.0 update.avlyun.sec.miui.com
+
+! ==================================================================
+! B 站 P2P 上传节点（2026-11-07，2 条）
+! 说明：原先写在 hosts 里指向 0.0.0.0，只拦得住经 Mihomo DNS 的解析；
+!       App 用自带 HTTPDNS 拿到 IP 直连时拦不住，那种情况要靠 Mihomo
+!       侧嗅探 SNI 的规则拦。AdGuard Home 只能做 DNS 层拦截，这里补上
+!       域名解析层的拦截。
+! ==================================================================
+0.0.0.0 mcdn.bilivideo.com
+0.0.0.0 mcdn.bilivideo.cn

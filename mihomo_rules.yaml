@@ -1,0 +1,180 @@
+# Title: Anti-Fraud Block — Mihomo / Clash 远程规则集
+# Description: 反诈 / 安全中心域名拒绝规则，由 hosts.txt 转换而来
+# Format: Mihomo rule-provider, behavior: classical
+# Source: https://github.com/codecodegogogo/Anti-Block
+#
+# 用法（Mihomo / Clash.Meta 主配置）：
+#   rule-providers:
+#     anti-fraud:
+#       type: http
+#       behavior: classical
+#       url: "https://cdn.jsdelivr.net/gh/codecodegogogo/Anti-Block@main/mihomo_rules.yaml"
+#       path: ./ruleset/anti_fraud.yaml
+#       interval: 86400
+#
+#   rules:
+#     - RULE-SET,anti-fraud,REJECT
+#
+# 说明：
+#   - DOMAIN-SUFFIX 匹配域名本身及其所有子域名，与 hosts.txt 中
+#     0.0.0.0 域名的拦截范围一致。
+#   - 规则只拦截新发起的连接；App 用 HTTPDNS 拿 IP 直连时，需要开启
+#     sniffer（流量嗅探）并按 SNI 匹配才能拦住。
+#   - 本文件是 classical 格式，不要用 behavior: domain 加载。
+
+payload:
+  - DOMAIN-SUFFIX,gjfzpt.cn
+  - DOMAIN-SUFFIX,fzapp-test-tyy.gjfzpt.cn
+  - DOMAIN-SUFFIX,oss.gjfzpt.cn
+  - DOMAIN-SUFFIX,fzapp.gjfzpt.cn
+  - DOMAIN-SUFFIX,fzapph5.gjfzpt.cn
+  - DOMAIN-SUFFIX,miit.gov.cn
+  - DOMAIN-SUFFIX,mps.gov.cn
+  - DOMAIN-SUFFIX,beian.miit.gov.cn
+  - DOMAIN-SUFFIX,ywtbapi.mps.gov.cn
+  - DOMAIN-SUFFIX,beian.mps.gov.cn
+  - DOMAIN-SUFFIX,mail.mps.gov.cn
+  - DOMAIN-SUFFIX,ywtb.mps.gov.cn
+  - DOMAIN-SUFFIX,ngo.mps.gov.cn
+  - DOMAIN-SUFFIX,m.mps.gov.cn
+  - DOMAIN-SUFFIX,dbjb.mps.gov.cn
+  - DOMAIN-SUFFIX,ispl.mps.gov.cn
+  - DOMAIN-SUFFIX,ecidewc.mps.gov.cn
+  - DOMAIN-SUFFIX,cyberpolice.mps.gov.cn
+  - DOMAIN-SUFFIX,app.mps.gov.cn
+  - DOMAIN-SUFFIX,zlbj.mps.gov.cn
+  - DOMAIN-SUFFIX,zwfw.mps.gov.cn
+  - DOMAIN-SUFFIX,ecidcwc.mps.gov.cn
+  - DOMAIN-SUFFIX,www.mps.gov.cn
+  - DOMAIN-SUFFIX,chanct.com
+  - DOMAIN-SUFFIX,fqzpt.com
+  - DOMAIN-SUFFIX,fzlm.com
+  - DOMAIN-SUFFIX,fanzha.org.cn
+  - DOMAIN-SUFFIX,hicore-auth.com
+  - DOMAIN-SUFFIX,hei-tong.com
+  - DOMAIN-SUFFIX,loongteam.com
+  - DOMAIN-SUFFIX,cert.org.cn
+  - DOMAIN-SUFFIX,ifcert.cn
+  - DOMAIN-SUFFIX,ifcert.com
+  - DOMAIN-SUFFIX,ifcert.org.cn
+  - DOMAIN-SUFFIX,cnvd.org.cn
+  - DOMAIN-SUFFIX,anva.org.cn
+  - DOMAIN-SUFFIX,ics-cert.org.cn
+  - DOMAIN-SUFFIX,certlab.org
+  - DOMAIN-SUFFIX,china-bestmind.com
+  - DOMAIN-SUFFIX,i-bestmind.com
+  - DOMAIN-SUFFIX,t-bestmind.com
+  - DOMAIN-SUFFIX,himindtech.com
+  - DOMAIN-SUFFIX,fhss.com.cn
+  - DOMAIN-SUFFIX,hailiangyun.cn
+
+# ==================================================================
+# NOIR 追踪域名（analytics / ads / crash reporting）
+# 来源：NOIR 手机扫描报告 · 2026-11-05 · 共 47 条
+# 说明：这些域名不承载用户功能，可在 DNS 层拦截。
+# DNS 拦截对已建立的连接无效，切换网络或重启后生效。
+# ==================================================================
+  - DOMAIN-SUFFIX,ad.zijieapi.com
+  - DOMAIN-SUFFIX,aes-1.cn-wulanchabu.log.aliyuncs.com
+  - DOMAIN-SUFFIX,api.ad.xiaomi.com
+  - DOMAIN-SUFFIX,apmplus.volces.com
+  - DOMAIN-SUFFIX,app-monitor.ele.me
+  - DOMAIN-SUFFIX,applog-perf.uc.cn
+  - DOMAIN-SUFFIX,applog.lc.quark.cn
+  - DOMAIN-SUFFIX,applog.snssdk.com
+  - DOMAIN-SUFFIX,applog.uc.cn
+  - DOMAIN-SUFFIX,aspect-upush.umeng.com
+  - DOMAIN-SUFFIX,athena-api.oceanengine.com
+  - DOMAIN-SUFFIX,aweme.snssdk.com
+  - DOMAIN-SUFFIX,bugtrace.3g.qq.com
+  - DOMAIN-SUFFIX,cgi.qplus.com
+  - DOMAIN-SUFFIX,cgp.snssdk.com
+  - DOMAIN-SUFFIX,collect.ux.21cn.com
+  - DOMAIN-SUFFIX,ecom.snssdk.com
+  - DOMAIN-SUFFIX,errnewlog.umeng.com
+  - DOMAIN-SUFFIX,errnewlogos.umeng.com
+  - DOMAIN-SUFFIX,gjapplog.ucweb.com
+  - DOMAIN-SUFFIX,h-adashx.ut.taobao.com
+  - DOMAIN-SUFFIX,i.isnssdk.com
+  - DOMAIN-SUFFIX,i.sgsnssdk.com
+  - DOMAIN-SUFFIX,jrlt.beacon.qq.com
+  - DOMAIN-SUFFIX,log.iflytek.com
+  - DOMAIN-SUFFIX,log.snssdk.com
+  - DOMAIN-SUFFIX,log.tpns.tencent.com
+  - DOMAIN-SUFFIX,logs.amap.com
+  - DOMAIN-SUFFIX,mon.byteoversea.com
+  - DOMAIN-SUFFIX,mon.isnssdk.com
+  - DOMAIN-SUFFIX,mon.tiktokv.com
+  - DOMAIN-SUFFIX,offmsg.umeng.com
+  - DOMAIN-SUFFIX,pingma.qq.com
+  - DOMAIN-SUFFIX,px.wpk.quark.cn
+  - DOMAIN-SUFFIX,rtapplog.snssdk.com
+  - DOMAIN-SUFFIX,rtlog.qvb.qcloud.com
+  - DOMAIN-SUFFIX,rtlog.snssdk.com
+  - DOMAIN-SUFFIX,rttgpsreport.map.qq.com
+  - DOMAIN-SUFFIX,stat.api.tpns.tencent.com
+  - DOMAIN-SUFFIX,stat.m.img4399.com
+  - DOMAIN-SUFFIX,tracker-preview.ai.xiaomi.com
+  - DOMAIN-SUFFIX,tracker-preview.xiaomixiaoai.com
+  - DOMAIN-SUFFIX,tracker.ai.xiaomi.com
+  - DOMAIN-SUFFIX,tracker.xiaomixiaoai.com
+  - DOMAIN-SUFFIX,tracking.miui.com
+  - DOMAIN-SUFFIX,up4.ucweb.com
+  - DOMAIN-SUFFIX,zxid-m.mobileservice.cn
+
+# ==================================================================
+# 手机复扫补充：SystemHelper / 小米安全栈（2026-11-06）
+# ==================================================================
+# 建议拦截：中国联通 DM（Device Management，设备管理）平台，明文 HTTP，移动卡无功能依赖
+  - DOMAIN-SUFFIX,dm.wo.com.cn
+# 建议拦截：腾讯灯塔统计上报
+  - DOMAIN-SUFFIX,otheve.beacon.qq.com
+# 建议拦截：小米游戏 SDK 日志上报
+  - DOMAIN-SUFFIX,sdk.s.migames.com
+
+# 以下为小米安全功能域名，已按你的要求启用；如安全功能异常，注释掉对应行：
+  - DOMAIN-SUFFIX,virus-engine.sec.miui.com
+  - DOMAIN-SUFFIX,api.sec.miui.com
+  - DOMAIN-SUFFIX,flash.sec.miui.com
+  - DOMAIN-SUFFIX,notify.sec.miui.com
+  - DOMAIN-SUFFIX,detection-aigc.engine.miui.com
+# 百度定位：拦了会影响依赖百度定位的应用；如定位异常，注释掉这一行
+  - DOMAIN-SUFFIX,loc.map.baidu.com
+# hosts 语法无法表达 *.sec.miui.com 通配；也不建议拦整个 sec.miui.com。
+
+# ==================================================================
+# 安全组件上传口补充（2026-11-06，4 条）
+# ==================================================================
+# 安全中心主上传口；拦后可能影响隐私协议/云配置同步
+  - DOMAIN-SUFFIX,data.sec.miui.com
+# 安全中心广告/游戏推荐
+  - DOMAIN-SUFFIX,adv.sec.miui.com
+# 小米广告监测
+  - DOMAIN-SUFFIX,monitor-check.ad.xiaomi.com
+# 第三方上传端点（LBE/AuthManager 代码中出现）
+  - DOMAIN-SUFFIX,gateway-papa.cloud.weizhi.com
+
+# ==================================================================
+# 反诈/安全中心云端点补充（2026-11-06）
+# 说明：以下域名按需拦截；拦后可能影响对应的安全功能。
+# ==================================================================
+# 反诈检测引擎配置；拦后可能影响反诈云配置
+  - DOMAIN-SUFFIX,fraud-detection.engine.miui.com
+# 安全中心端口检测/鉴权/机器人端点；拦后可能影响网络检测与权限授权
+  - DOMAIN-SUFFIX,port.sec.miui.com
+  - DOMAIN-SUFFIX,auth.be.sec.miui.com
+  - DOMAIN-SUFFIX,auth-engine.sec.miui.com
+  - DOMAIN-SUFFIX,pro-robot.sec.miui.com
+# 安天 AVL 病毒库更新；拦后病毒库无法更新
+  - DOMAIN-SUFFIX,logupdate.avlyun.sec.miui.com
+  - DOMAIN-SUFFIX,update.avlyun.sec.miui.com
+
+# ==================================================================
+# B 站 P2P 上传节点（2026-11-07，2 条）
+# 说明：原先写在 hosts 里指向 0.0.0.0，只拦得住经 Mihomo DNS 的解析；
+#       App 用自带 HTTPDNS 拿到 IP 直连时拦不住，那种情况要靠 Mihomo
+#       侧嗅探 SNI 的规则拦。AdGuard Home 只能做 DNS 层拦截，这里补上
+#       域名解析层的拦截。
+# ==================================================================
+  - DOMAIN-SUFFIX,mcdn.bilivideo.com
+  - DOMAIN-SUFFIX,mcdn.bilivideo.cn
