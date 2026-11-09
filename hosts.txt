@@ -161,3 +161,23 @@
 ! ==================================================================
 0.0.0.0 mcdn.bilivideo.com
 0.0.0.0 mcdn.bilivideo.cn
+
+! ==================================================================
+! Privacy Guard 来源补充（2026-11-09，9 条）
+! 来源：privacy-guard-src/hosts（该文件共 75 条，其余 66 条已收录于上方各节）
+! 说明：均为上报 / 统计域名。srv / framework.sec.miui.com 属于小米
+!       安全栈，拦后如安全功能异常，注释掉对应行。
+! ==================================================================
+! 中国信通院终端数据上报
+0.0.0.0 eps.caict.ac.cn
+! 小米安全栈服务端 / 框架端点
+0.0.0.0 framework.sec.miui.com
+0.0.0.0 srv.sec.miui.com
+! 小米追踪域名（tracking.* 是 tracking.miui.com 的兄弟域，需单独列出）
+0.0.0.0 om.tracking.miui.com
+0.0.0.0 tracking.eu.miui.com
+0.0.0.0 tracking.india.miui.com
+0.0.0.0 tracking.intl.miui.com
+0.0.0.0 tracking.rus.miui.com
+! 小米 OneTrack 追踪备份上报
+0.0.0.0 pn-tracking-bak.onetrack.mi.com

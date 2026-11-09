@@ -178,3 +178,23 @@ payload:
 # ==================================================================
   - DOMAIN-SUFFIX,mcdn.bilivideo.com
   - DOMAIN-SUFFIX,mcdn.bilivideo.cn
+
+# ==================================================================
+# Privacy Guard 来源补充（2026-11-09，9 条）
+# 来源：privacy-guard-src/hosts（该文件共 75 条，其余 66 条已收录于上方各节）
+# 说明：均为上报 / 统计域名。srv / framework.sec.miui.com 属于小米
+#       安全栈，拦后如安全功能异常，注释掉对应行。
+# ==================================================================
+# 中国信通院终端数据上报
+  - DOMAIN-SUFFIX,eps.caict.ac.cn
+# 小米安全栈服务端 / 框架端点
+  - DOMAIN-SUFFIX,framework.sec.miui.com
+  - DOMAIN-SUFFIX,srv.sec.miui.com
+# 小米追踪域名（tracking.* 是 tracking.miui.com 的兄弟域，需单独列出）
+  - DOMAIN-SUFFIX,om.tracking.miui.com
+  - DOMAIN-SUFFIX,tracking.eu.miui.com
+  - DOMAIN-SUFFIX,tracking.india.miui.com
+  - DOMAIN-SUFFIX,tracking.intl.miui.com
+  - DOMAIN-SUFFIX,tracking.rus.miui.com
+# 小米 OneTrack 追踪备份上报
+  - DOMAIN-SUFFIX,pn-tracking-bak.onetrack.mi.com
