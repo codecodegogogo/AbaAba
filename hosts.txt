@@ -7,6 +7,7 @@
 ! direct connections to bare IP addresses.
 
 0.0.0.0 gjfzpt.cn
+0.0.0.0 7k7k.com
 0.0.0.0 fzapp-test-tyy.gjfzpt.cn
 0.0.0.0 oss.gjfzpt.cn
 0.0.0.0 fzapp.gjfzpt.cn
